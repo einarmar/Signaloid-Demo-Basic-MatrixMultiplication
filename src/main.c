@@ -37,7 +37,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <uncertain.h>
+#include <uxhw.h>
 #include <unistd.h>
 
 typedef enum
@@ -280,11 +280,11 @@ loadDoubleDistFromPath(double *var, const char *filename)
 
 	if (var == NULL)
 	{
-		returnValue = libUncertainDoubleDistFromSamples(samples, sampleCount);
+		returnValue = UxHwDoubleDistFromSamples(samples, sampleCount);
 	}
 	else
 	{
-		(*var) = libUncertainDoubleDistFromSamples(samples, sampleCount);
+		(*var) = UxHwDoubleDistFromSamples(samples, sampleCount);
 	}
 
 	if (fclose(inp) != 0)
